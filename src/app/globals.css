@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: rgb(8, 10, 32);
+  background: linear-gradient(
+    92deg,
+    rgba(8, 10, 32, 1) 0%,
+    rgba(31, 34, 98, 1) 100%
+  );
+  color: white;
+}
+
+.main-bg {
+  background-image: url("../../public/assets/banner2.jpg");
+}
+
+
