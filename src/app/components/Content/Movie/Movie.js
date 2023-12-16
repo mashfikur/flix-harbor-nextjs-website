@@ -11,9 +11,6 @@ const Popular = async ({ section = "tv" }) => {
         accept: "application/json",
         Authorization: `Bearer ${process.env.API_ACCESS_TOKEN}`,
       },
-      next: {
-        revalidate: 2,
-      },
     }
   );
 
@@ -26,7 +23,7 @@ const Popular = async ({ section = "tv" }) => {
         {movies.map((movie, idx) => (
           <div
             key={idx}
-            className=" h-[35rem]  rounded-xl  relative text-neutral  shadow-xl"
+            className=" h-[30rem]   rounded-xl  relative text-neutral  shadow-xl"
           >
             <div className="">
               <Image
@@ -34,7 +31,7 @@ const Popular = async ({ section = "tv" }) => {
                 width={500}
                 height={400}
                 alt="movie-poster"
-                className="object-cover h-[35rem] rounded-xl"
+                className="object-cover h-[30rem] rounded-xl "
               ></Image>
             </div>
 

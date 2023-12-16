@@ -4,13 +4,15 @@ const Content = async () => {
   return (
     <div className="container mx-auto min-h-screen">
       {/* movies section */}
-      <h3 className="text-center py-14 text-4xl font-semibold">
+      <h3 className="text-start  my-14 text-5xl   font-light">
         Popular Movies
       </h3>
+
       <Popular section="movie"></Popular>
 
       {/* tv section */}
-      <h3 className="text-center py-14 text-4xl font-semibold">Popular Tv</h3>
+      <h3 className="text-start  my-14 text-5xl   font-light">Popular Tv</h3>
+
       <Popular section="tv"></Popular>
     </div>
   );
