@@ -19,23 +19,23 @@ import axios from "axios";
 export default function Slider() {
   const imgUrl = `https://image.tmdb.org/t/p/original/thLAoL6VeZGmCyDpCOeoxLvA8yS.jpg`;
 
-  // const { data: currents } = useQuery({
-  //   queryKey: ["currents"],
-  //   queryFn: async () => {
-  //     const res = await axios.get(
-  //       "https://api.themoviedb.org/3/trending/all/day?language=en-US",
-  //       {
-  //         headers: {
-  //           Accept: "application/json",
-  //           Authorization:
-  //             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWMzMTkyNjU0NGQzMmNiNjljZDk2MDY3MDk3NTQ5ZSIsInN1YiI6IjY1N2FlZGYxZWM4YTQzMDBlMDliNWUyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.U2kr6J-oqi3Wl93bR0RpCcErIuA9S-USv47_XDjgZPI",
-  //         },
-  //       }
-  //     );
+  const { data: currents, isPending } = useQuery({
+    queryKey: ["currents"],
+    queryFn: async () => {
+      const res = await axios.get(
+        "https://api.themoviedb.org/3/trending/all/day?language=en-US",
+        {
+          headers: {
+            Accept: "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWMzMTkyNjU0NGQzMmNiNjljZDk2MDY3MDk3NTQ5ZSIsInN1YiI6IjY1N2FlZGYxZWM4YTQzMDBlMDliNWUyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.U2kr6J-oqi3Wl93bR0RpCcErIuA9S-USv47_XDjgZPI",
+          },
+        }
+      );
 
-  //     return res.data;
-  //   },
-  // });
+      return res.data;
+    },
+  });
 
   // console.log(currents);
 
@@ -43,7 +43,7 @@ export default function Slider() {
     <div className="container mx-auto my-32 flex items-center ">
       <div className="flex-1">
         <h3 className="text-7xl text-amber-600 font-semibold">
-          Pick Your Content Of The Day
+          Pick Your Content Of The Day !
         </h3>
       </div>
       <div className="flex-1">
@@ -55,19 +55,19 @@ export default function Slider() {
           loop={true}
           autoplay={{ duration: 2500 }}
         >
-          {/* {movies &&
-            movies?.results.map((moive, idx) => (
+          {currents &&
+            currents?.results.map((moive, idx) => (
               <SwiperSlide key={idx}>
                 {" "}
                 <Image
                   alt="slider-image"
                   width={500}
                   height={400}
-                  src={imgUrl}
+                  src={`https://image.tmdb.org/t/p/original${moive.poster_path}`}
                   className=""
                 ></Image>{" "}
               </SwiperSlide>
-            ))} */}
+            ))}
         </Swiper>
       </div>
     </div>
