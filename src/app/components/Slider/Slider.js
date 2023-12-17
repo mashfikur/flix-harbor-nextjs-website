@@ -40,7 +40,7 @@ export default function Slider() {
   // console.log(currents);
 
   return (
-    <div className="container mx-auto my-32 flex items-center ">
+    <div className="container mx-auto my-36 flex items-center ">
       <div className="flex-1">
         <h3 className="text-7xl text-amber-600 font-semibold">
           Pick Your Content Of The Day !
@@ -50,25 +50,29 @@ export default function Slider() {
         <Swiper
           effect={"cards"}
           grabCursor={true}
-          modules={[EffectCards]}
+          modules={[EffectCards, Autoplay]}
           className="mySwiper w-80 mx-auto"
           loop={true}
-          autoplay={{ duration: 2500 }}
+          autoplay={{ pauseOnMouseEnter: true, delay: 4000 }}
         >
           {currents &&
             currents?.results.map((moive, idx) => (
               <SwiperSlide key={idx}>
-                {" "}
                 <Image
                   alt="slider-image"
                   width={500}
                   height={400}
                   src={`https://image.tmdb.org/t/p/original${moive.poster_path}`}
-                  className=""
+                  className="hover:scale-110 duration-300 hover:cursor-pointer"
                 ></Image>{" "}
               </SwiperSlide>
             ))}
         </Swiper>
+        <div className="flex justify-center mt-10">
+          <button class="btn z-[100]  right-[30%] bottom-2 btn-warning rounded-full text-lg px-12 flex items-center justify-center custom-shadow duration-500">
+            Details
+          </button>
+        </div>{" "}
       </div>
     </div>
   );
