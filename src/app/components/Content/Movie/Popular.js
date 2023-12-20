@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContentSlider from "../../ContentSlider/ContentSlider";
 
 const Popular = async ({ section = "tv" }) => {
   let page = 1;
@@ -19,6 +20,7 @@ const Popular = async ({ section = "tv" }) => {
   const movies = data.results;
   return (
     <div>
+      <ContentSlider></ContentSlider>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pb-12">
         {movies.map((movie, idx) => (
           <div

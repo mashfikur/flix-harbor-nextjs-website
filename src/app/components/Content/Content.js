@@ -1,4 +1,4 @@
-import Popular from "./Movie/Movie";
+import Popular from "./Movie/Popular";
 
 const Content = async () => {
   return (

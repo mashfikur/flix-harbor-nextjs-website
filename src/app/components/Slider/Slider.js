@@ -7,6 +7,8 @@ import "./styles.css";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
+import blurdata from "../../../../public/assets/banner2.jpg"
+
 // import required modules
 import { EffectCards, Autoplay } from "swiper/modules";
 import Image from "next/image";
@@ -59,6 +61,8 @@ export default function Slider() {
             currents?.results.map((moive, idx) => (
               <SwiperSlide key={idx}>
                 <Image
+                 placeholder="data:image/"
+                  
                   alt="slider-image"
                   width={500}
                   height={400}
@@ -69,7 +73,7 @@ export default function Slider() {
             ))}
         </Swiper>
         <div className="flex justify-center mt-10">
-          <button class="btn z-[100]  right-[30%] bottom-2 btn-warning rounded-full text-lg px-12 flex items-center justify-center custom-shadow duration-500">
+          <button className="btn z-[100]  right-[30%] bottom-2 btn-warning rounded-full text-lg px-12 flex items-center justify-center custom-shadow duration-500">
             Details
           </button>
         </div>{" "}
