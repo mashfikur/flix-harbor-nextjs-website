@@ -8,7 +8,7 @@ const Banner = async () => {
     <div className="mt-12 container mx-auto minhsc">
       <div
         className={`rounded-xl min-h-[70vh] main-bg  `}
-        style={{ background: `url(${imgUrl})`,backgroundSize:"cover",backgroundPosition:"initial" }}
+        // style={{ background: `url(${imgUrl})`,backgroundSize:"cover",backgroundPosition:"initial" }}
       >
         <div className=" min-h-[70vh] flex p-6 items-center rounded-xl bg-gradient-to-t from-black ">
           <h3 className="text-6xl font-bold leading-normal">
